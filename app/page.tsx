@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -109,8 +109,36 @@ export default function Home() {
     //     </a>
     //   </div>
     // </main>
-    <div className='bg-base-40 h-[100vh]'>
-    
+    <div className="bg-base-40 h-[100vh] text-white">
+      <div className="flex flex-col mx-16 md:flex-row py-16 justify-center">
+        <Image
+          src="/login-img.png"
+          alt="missing img"
+          width={300}
+          height={300}
+          className='rounded-xl hidden md:flex'
+        />
+        <div className="bg-primary-20 rounded-xl py-8 px-8 flex flex-col gap-8">
+          <h1 className="font-bold text-xl">Login</h1>
+          <form action="/dashboard" className='flex flex-col gap-4 md:w-[25vw]'>
+            <div className='flex flex-col gap-2'>
+              <label htmlFor="email" className='text-sm'>Email</label>
+              <input
+                type="text"
+                className="email border-2 border-white bg-primary-20 text-white rounded-lg"
+              />
+            </div>
+            <div className='flex flex-col gap-2'>
+              <label htmlFor="password" className='text-sm'>Password</label>
+              <input
+                type="text"
+                className="password border-2 border-white bg-primary-20 text-white rounded-lg"
+              />
+            </div>
+            <button className='bg-white rounded-lg text-black font-bold text-lg py-2 w-36 mx-auto mt-8' type='submit'>Login</button>
+          </form>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
