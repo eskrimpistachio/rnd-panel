@@ -19,6 +19,7 @@ const config: Config = {
         'primary-30' : '#150050',
         'secondary-10' : '#EE5D80',
         'secondary-20' : '#FB2576',
+        'base-10' : '#F4F5FD',
         'base-30' : '#2B2F41',
         'base-40' : '#03001C',
       },

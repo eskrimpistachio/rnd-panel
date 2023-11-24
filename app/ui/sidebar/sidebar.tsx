@@ -25,11 +25,6 @@ export default function Sidebar() {
           path: '/dashboard/projects',
           icon : <MdLocalMall/>,
         },
-        {
-          title: 'Profile',
-          path: '/dashboard/profile',
-          icon : <MdOutlineAccountCircle/>,
-        },
       ],
     },
   ];
