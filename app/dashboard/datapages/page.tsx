@@ -65,7 +65,7 @@ export default function DataManagement() {
               </Td>
             </Tr>
             <Tr>
-              <Td>Diesel</Td>
+              <Td>Eco Diesel</Td>
               <Td>A001</Td>
               <Td>Muhammad Ridha</Td>
               <Td>Kategori</Td>

@@ -13,32 +13,33 @@ const data = [
   {
     name: 'Petroleum',
     Jumlah_Mining: 4000,
-    Berhasil_Di_Olah : 2400,
-    Terjual : 2400,
+    Berhasil_Di_Olah: 2400,
+    Terjual: 2400,
   },
   {
-    name: 'Petroleum',
+    name: 'Avtur',
     Jumlah_Mining: 3000,
-    Berhasil_Di_Olah : 2600,
-    Terjual : 1500,
+    Berhasil_Di_Olah: 2600,
+    Terjual: 1500,
   },
   {
-    name: 'Petroleum',
+    name: 'Bio Solar',
     Jumlah_Mining: 6000,
-    Berhasil_Di_Olah : 5600,
-    Terjual : 4500,
+    Berhasil_Di_Olah: 5600,
+    Terjual: 4500,
   },
   {
-    name: 'Petroleum',
+    name: 'Eco Diesel',
     Jumlah_Mining: 4000,
-    Berhasil_Di_Olah : 2400,
-    Terjual : 2400,
+    Berhasil_Di_Olah: 2400,
+    Terjual: 2400,
   },
 ];
 
 const Chart = () => {
   return (
-    <div>
+    <div className="bg-white rounded-xl py-4 px-4 flex flex-col gap-6">
+      <h1 className="text-primary-30 font-bold text-xl">Reports</h1>
       <AreaChart
         width={800}
         height={400}
@@ -49,6 +50,7 @@ const Chart = () => {
           left: 0,
           bottom: 0,
         }}
+        className='font-bold'
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />

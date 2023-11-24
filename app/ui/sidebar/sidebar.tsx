@@ -1,6 +1,6 @@
 import MenuLink from './menuLink/menuLink';
 import { Unbounded } from 'next/font/google';
-import { MdSpaceDashboard, MdDataUsage, MdLocalMall, MdOutlineAccountCircle } from 'react-icons/md';
+import { MdSpaceDashboard, MdDataUsage, MdLocalMall, MdDoorBack } from 'react-icons/md';
 
 const unbound = Unbounded({ subsets: ['latin'] });
 
@@ -24,6 +24,11 @@ export default function Sidebar() {
           title: 'Projects',
           path: '/dashboard/projects',
           icon : <MdLocalMall/>,
+        },
+        {
+          title: 'Logout',
+          path: '/logout',
+          icon : <MdDoorBack/>,
         },
       ],
     },

@@ -18,7 +18,7 @@ export default function Dashboard() {
           <MdOutlineSearch className="text-xl" />
           <input
             type="search"
-            className="bg-transparent text-sm"
+            className="bg-transparent text-sm w-[50vw] active:border-[0px] active:border-transparent"
             placeholder="Search your projects"
           />
         </div>
@@ -28,7 +28,7 @@ export default function Dashboard() {
         </div>
       </div>
       <h1 className="font-bold text-4xl">Hello, R&D Department!</h1>
-      <div className="flex flex-row gap-4">
+      <div className="flex flex-row justify-between">
         <Card />
         <Card />
         <Card />
