@@ -9,6 +9,8 @@ import {
   Td,
   TableContainer,
 } from '@chakra-ui/react';
+import Button from '../ui/button/Button';
+import Link from 'next/link';
 
 export default function Dashboard() {
   return (
@@ -27,7 +29,12 @@ export default function Dashboard() {
           <h1>Help and Support</h1>
         </div>
       </div>
-      <h1 className="font-bold text-4xl">Hello, R&D Department!</h1>
+      <div className="flex flex-row justify-between">
+        <h1 className="font-bold text-4xl">Hello, R&D Department!</h1>
+        <Link href="/dashboard/add">
+          <Button>Add Data</Button>
+        </Link>
+      </div>
       <div className="flex flex-row justify-between">
         <Card />
         <Card />
