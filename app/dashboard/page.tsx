@@ -44,8 +44,8 @@ export default async function Dashboard() {
         <Card />
       </div>
       <h1 className="font-bold text-2xl">Recent Activity</h1>
-      <TableContainer>
-        <Table size="sm">
+      <TableContainer id='table'>
+        <Table size="md">
           <Thead>
             <Tr>
               <Th className="text-white">Date and Time</Th>

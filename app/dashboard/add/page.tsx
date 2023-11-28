@@ -1,35 +1,35 @@
+import { addGeneralData } from '@/app/lib/actions';
 
 export default function add() {
-
   return (
     <div className="flex flex-col  justify-center m-4 gap-8">
       <h1 className="font-bold text-2xl">Add General Data</h1>
-      <form className="flex flex-col gap-4">
+      <form action={addGeneralData} className="flex flex-col gap-4">
         <div className="flex flex-col gap-2 w-96">
-          <label htmlFor="name">Activity Update</label>
+          <label htmlFor="activity">Activity Update</label>
           <input
             type="text"
-            id="name"
-            name="name"
+            id="activity"
+            name="activity"
             className="bg-primary-20 rounded-lg border-white border-2 placeholder:text-white placeholder:text-sm py-2 px-6"
             placeholder="Please enter your detail activity..."
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="pickupdate">Date and Time</label>
+          <label htmlFor="dateTime">Date and Time</label>
           <input
-            id="pickupdate"
-            name="pickupdate"
+            id="dateTime"
+            name="dateTime"
             type="date"
             className="w-96 py-2 px-6 rounded-lg bg-primary-20 text-white border-white border-2"
           ></input>
         </div>
         <div className="flex flex-col gap-2 w-96">
-          <label htmlFor="name">Enter Location</label>
+          <label htmlFor="location">Enter Location</label>
           <input
             type="text"
-            id="name"
-            name="name"
+            id="location"
+            name="location"
             className="bg-primary-20 rounded-lg border-white border-2 placeholder:text-white placeholder:text-sm py-2 px-6"
             placeholder="Example : Malang, Indonesia"
           />
