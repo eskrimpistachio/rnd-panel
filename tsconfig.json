@@ -33,7 +33,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "app/lib/actions.js", "app/auth.js", "middleware.js", "app/authconfig.js"  ],
   "exclude": [
     "node_modules"
   ]

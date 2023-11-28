@@ -1,5 +1,19 @@
 import mongoose from 'mongoose';
 
+const userSchema = new mongoose.Schema({
+  username: {
+    type: String,
+    required: true,
+    unique: true,
+    min: 3,
+    max: 20,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+});
+
 const generalSchema = new mongoose.Schema(
   {
     activity: {
@@ -62,6 +76,7 @@ const projects = new mongoose.Schema(
   { timestamps: true }
 );
 
+export const User = mongoose.models.User || mongoose.model('User', userSchema);
 export const General =
   mongoose.models.General || mongoose.model('General', generalSchema);
 export const DataManagement =
