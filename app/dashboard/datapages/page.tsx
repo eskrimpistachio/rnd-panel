@@ -12,6 +12,7 @@ import {
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import { fetchDataManage } from '@/app/lib/data';
+import { delDataManage } from '@/app/lib/actions';
 
 export default async function DataManagement() {
   const data = await fetchDataManage();
@@ -40,6 +41,7 @@ export default async function DataManagement() {
               <Th className="text-white">Penyimpanan</Th>
               <Th className="text-white">Penanggung Jawab</Th>
               <Th className="text-white">Kategori</Th>
+              <Th className="text-white">Actions</Th>
             </Tr>
           </Thead>
           <Tbody>
@@ -49,6 +51,14 @@ export default async function DataManagement() {
                 <Td>{d.penyimpanan}</Td>
                 <Td>{d.penanggungJawab}</Td>
                 <Td>{d.kategori}</Td>
+                <Td>
+                  <form action={delDataManage}>
+                    <input type="hidden" name="id" value={d.id} />
+                    <button className="rounded-xl bg-secondary-20 text-white py-2 px-4 font-semibold ">
+                      Delete
+                    </button>
+                  </form>
+                </Td>
               </Tr>
             ))}
 

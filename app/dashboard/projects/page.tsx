@@ -11,6 +11,7 @@ import {
 import Button from '@/app/ui/button/Button';
 import Link from 'next/link';
 import { fetchProjects } from '@/app/lib/data';
+import { delProjects } from '@/app/lib/actions';
 
 export default async function Projects() {
   const data = await fetchProjects();
@@ -37,6 +38,7 @@ export default async function Projects() {
               <Th className="text-white">Laboratorium</Th>
               <Th className="text-white">Penanggung Jawab</Th>
               <Th className="text-white">Status</Th>
+              <Th className="text-white">Actions</Th>
             </Tr>
           </Thead>
           <Tbody>
@@ -46,6 +48,14 @@ export default async function Projects() {
                 <Td>{d.laboratorium}</Td>
                 <Td>{d.penanggungJawab}</Td>
                 <Td>{d.status}</Td>
+                <Td>
+                  <form action={delProjects}>
+                    <input type="hidden" name="id" value={d.id} />
+                    <button className="rounded-xl bg-secondary-20 text-white py-2 px-4 font-semibold ">
+                      Delete
+                    </button>
+                  </form>
+                </Td>
               </Tr>
             ))}
             {/* 

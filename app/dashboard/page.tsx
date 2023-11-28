@@ -12,6 +12,7 @@ import {
 import Button from '../ui/button/Button';
 import Link from 'next/link';
 import { fetchGeneral } from '../lib/data';
+import { delGeneralData } from '../lib/actions';
 
 export default async function Dashboard() {
   const genData = await fetchGeneral();
@@ -44,13 +45,14 @@ export default async function Dashboard() {
         <Card />
       </div>
       <h1 className="font-bold text-2xl">Recent Activity</h1>
-      <TableContainer id='table'>
+      <TableContainer id="table">
         <Table size="md">
           <Thead>
             <Tr>
               <Th className="text-white">Date and Time</Th>
               <Th className="text-white">Activity Update</Th>
               <Th className="text-white">Location</Th>
+              <Th className="text-white">Actions</Th>
             </Tr>
           </Thead>
           <Tbody>
@@ -59,6 +61,14 @@ export default async function Dashboard() {
                 <Td>{d.dateTime}</Td>
                 <Td>{d.activity}</Td>
                 <Td>{d.location}</Td>
+                <Td>
+                  <form action={delGeneralData}>
+                    <input type="hidden" name="id" value={d.id} />
+                    <button className="rounded-xl bg-secondary-20 text-white py-2 px-4 font-semibold ">
+                      Delete
+                    </button>
+                  </form>
+                </Td>
               </Tr>
             ))}
           </Tbody>
