@@ -11,8 +11,11 @@ import {
 } from '@chakra-ui/react';
 import Button from '../ui/button/Button';
 import Link from 'next/link';
+import { fetchGeneral } from '../lib/data';
 
-export default function Dashboard() {
+export default async function Dashboard() {
+  const genData = await fetchGeneral();
+
   return (
     <div className="m-4 flex flex-col gap-8">
       <div className="flex flex-row justify-around gap-16">
@@ -51,12 +54,16 @@ export default function Dashboard() {
             </Tr>
           </Thead>
           <Tbody>
-            <Tr>
-              <Td>31 October 2023, 14.00</Td>
-              <Td>Mengupdate Progress Project x di Kota ABC</Td>
-              <Td>Malang, Indonesia</Td>
-            </Tr>
-            <Tr>
+            {genData.map((d) => (
+              <Tr key={d.id}>
+                <Td>{d.dateTime}</Td>
+                <Td>{d.activity}</Td>
+                <Td>{d.location}</Td>
+              </Tr>
+            ))}
+          </Tbody>
+
+          {/* <Tr>
               <Td>31 October 2023, 14.00</Td>
               <Td>Menambahkan Project x di Kota ABC</Td>
               <Td>Bima, Indonesia</Td>
@@ -65,8 +72,7 @@ export default function Dashboard() {
               <Td>31 October 2023, 14.00</Td>
               <Td>Menyelesaikan Project AB di Kota Z</Td>
               <Td>New Delhi, India</Td>
-            </Tr>
-          </Tbody>
+            </Tr> */}
         </Table>
       </TableContainer>
     </div>

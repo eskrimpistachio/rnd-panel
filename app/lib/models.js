@@ -66,6 +66,6 @@ export const General =
   mongoose.models.General || mongoose.model('General', generalSchema);
 export const DataManagement =
   mongoose.models.DataManagement ||
-  mongoose.model('Data Managements', dataManageSchema);
+  mongoose.model('DataManagement', dataManageSchema);
 export const Projects =
   mongoose.models.Projects || mongoose.model('Projects', projects);
