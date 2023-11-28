@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
 
-const general = new mongoose.Schema(
+const generalSchema = new mongoose.Schema(
   {
-    activty: {
+    activity: {
       type: String,
       required: true,
     },
@@ -18,7 +18,7 @@ const general = new mongoose.Schema(
   { timestamps: true }
 );
 
-const dataManagement = new mongoose.Schema(
+const dataManageSchema = new mongoose.Schema(
   {
     hasil: {
       type: String,
@@ -63,8 +63,9 @@ const projects = new mongoose.Schema(
 );
 
 export const General =
-  mongoose.model.General || mongoose.model('General', general);
+  mongoose.models.General || mongoose.model('General', generalSchema);
 export const DataManagement =
-  mongoose.model.General || mongoose.model('Data Management', dataManagement);
+  mongoose.models.DataManagement ||
+  mongoose.model('Data Managements', dataManageSchema);
 export const Projects =
-  mongoose.model.General || mongoose.model('Projects', projects);
+  mongoose.models.Projects || mongoose.model('Projects', projects);

@@ -1,4 +1,10 @@
-export default function add() {
+import { fetchGeneral } from '../../lib/data';
+
+export default async function add() {
+  const generalData = await fetchGeneral();
+
+  console.log(generalData);
+
   return (
     <div className="flex flex-col  justify-center m-4 gap-8">
       <h1 className="font-bold text-2xl">Add General Data</h1>
