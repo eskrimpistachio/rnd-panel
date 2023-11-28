@@ -41,4 +41,18 @@ export const { signIn, signOut, auth } = NextAuth({
       },
     }),
   ],
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.username = user.username;
+      }
+      return token ;
+    },
+    async session({ session, token }) {
+      if (token) {
+        session.username = token.username;
+      }
+      return session ;
+    },
+  },
 });

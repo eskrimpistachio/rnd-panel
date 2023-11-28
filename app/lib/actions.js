@@ -4,7 +4,7 @@ import { connectDB } from './utils';
 import { DataManagement, General, Projects, User } from './models';
 import { redirect } from 'next/navigation';
 import bcrypt from 'bcrypt';
-import { signIn } from "../auth";
+import { signIn } from '../auth';
 
 export const addGeneralData = async (formData) => {
   const { activity, dateTime, location } = Object.fromEntries(formData);
@@ -109,15 +109,17 @@ export const delProjects = async (formData) => {
   revalidatePath('/dashboard/projects');
 };
 
-export const authenticate = async (formData) => {
+export const authenticate = async (prevState, formData) => {
   const { username, password } = Object.fromEntries(formData);
   // console.log(formData)
-  try {
-    await signIn('credentials', { username, password });
-  } catch (err) {
-    console.log(err);
-    return 'Failed to Login!';
-  }
+  // try {
+  await signIn('credentials', { username, password });
+  // } catch (err) {
+  //   console.log(err);
+  //   // revalidatePath('/dashboard');
+  //   // redirect('/dashboard');
+  //   return 'Failed to Login!';
+  // }
 };
 
 export const addUser = async (formData) => {

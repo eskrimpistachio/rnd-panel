@@ -1,3 +1,4 @@
+import { auth, signOut } from '@/app/auth';
 import MenuLink from './menuLink/menuLink';
 import { Unbounded } from 'next/font/google';
 import {
@@ -9,7 +10,9 @@ import {
 
 const unbound = Unbounded({ subsets: ['latin'] });
 
-export default function Sidebar() {
+export default async function Sidebar() {
+  const session = await auth();
+
   const menuItems = [
     {
       title: 'R & D Panel',
@@ -29,18 +32,18 @@ export default function Sidebar() {
           path: '/dashboard/projects',
           icon: <MdLocalMall />,
         },
-        {
-          title: 'Logout',
-          path: '/logout',
-          icon: <MdDoorBack />,
-        },
+        // {
+        //   title: 'Logout',
+        //   path: '/logout',
+        //   icon: <MdDoorBack />,
+        // },
       ],
     },
   ];
 
   return (
     <div>
-      <ul className="bg-primary-20 rounded-xl py-10 pl-6 pr-10 h-[90vh]">
+      <ul className="bg-primary-20 rounded-xl py-10 pl-6 pr-10 h-[90vh] flex flex-col gap-10">
         {menuItems.map((m) => (
           <div className="flex flex-col gap-16">
             <li className="text-xl font-bold px-4" key={m.title}>
@@ -53,6 +56,17 @@ export default function Sidebar() {
             </div>
           </div>
         ))}
+        <form
+          action={async () => {
+            'use server';
+            await signOut();
+          }}
+        >
+          <button className="flex flex-row gap-4 py-2 px-4 rounded-xl hover:bg-primary-30">
+            <MdDoorBack className="text-2xl" />
+            Logout
+          </button>
+        </form>
       </ul>
     </div>
   );
