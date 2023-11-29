@@ -43,7 +43,7 @@ export default function Home() {
             </div>
             <button
               type="submit"
-              className="bg-white rounded-lg text-black font-bold text-lg py-2 w-36 mx-auto mt-8"
+              className="bg-white rounded-lg text-black font-bold text-lg py-2 w-36 mx-auto mt-8 hover:scale-110"
             >
               Login
             </button>

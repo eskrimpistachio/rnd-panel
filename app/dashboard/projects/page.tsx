@@ -12,11 +12,13 @@ import Button from '@/app/ui/button/Button';
 import Link from 'next/link';
 import { fetchProjects } from '@/app/lib/data';
 import { delProjects } from '@/app/lib/actions';
+import { dataCard } from '@/app/lib/models';
+import { MdOutlineCases, MdAccessTime, MdPeopleAlt } from 'react-icons/md';
 
 export default async function Projects() {
   const data = await fetchProjects();
+  const sumProjects = dataCard.projects;
 
-  // console.log(data);
   return (
     <div className="p-4 flex flex-col gap-8">
       <div className="flex flex-row justify-between">
@@ -26,9 +28,21 @@ export default async function Projects() {
         </Link>
       </div>
       <div className="flex flex-row justify-between gap-4">
-        <Card />
-        <Card />
-        <Card />
+        <Card
+          jumlah={sumProjects.totalProjects}
+          deskripsi="Total Project"
+          icon={<MdOutlineCases />}
+        />
+        <Card
+          jumlah={sumProjects.sedangBerjalan}
+          deskripsi="Sedang Berjalan"
+          icon={<MdAccessTime />}
+        />
+        <Card
+          jumlah={sumProjects.peneliti}
+          deskripsi="Peneliti"
+          icon={<MdPeopleAlt />}
+        />
       </div>
       <TableContainer>
         <Table size="sm">
@@ -51,7 +65,7 @@ export default async function Projects() {
                 <Td>
                   <form action={delProjects}>
                     <input type="hidden" name="id" value={d.id} />
-                    <button className="rounded-xl bg-secondary-20 text-white py-2 px-4 font-semibold ">
+                    <button className="hover:scale-110 rounded-xl bg-secondary-20 text-white py-2 px-4 font-semibold ">
                       Delete
                     </button>
                   </form>

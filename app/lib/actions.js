@@ -19,7 +19,7 @@ export const addGeneralData = async (formData) => {
 
     await newData.save();
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     throw new Error('Failed to add Data!');
   }
   revalidatePath('/dashboard/');
@@ -33,7 +33,7 @@ export const delGeneralData = async (formData) => {
     connectDB();
     await General.findByIdAndDelete(id);
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     throw new Error('Failed to delete Data!');
   }
   revalidatePath('/dashboard/');
@@ -54,7 +54,7 @@ export const addDataManage = async (formData) => {
 
     await newData.save();
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     throw new Error('Failed to add Data!');
   }
   revalidatePath('/dashboard/datapages');
@@ -68,7 +68,7 @@ export const delDataManage = async (formData) => {
     connectDB();
     await DataManagement.findByIdAndDelete(id);
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     throw new Error('Failed to delete Data!');
   }
   revalidatePath('/dashboard/datapages');
@@ -89,7 +89,7 @@ export const addProjects = async (formData) => {
 
     await newData.save();
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     throw new Error('Failed to add Data!');
   }
   revalidatePath('/dashboard/projects');
@@ -103,7 +103,7 @@ export const delProjects = async (formData) => {
     connectDB();
     await Projects.findByIdAndDelete(id);
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     throw new Error('Failed to delete Data!');
   }
   revalidatePath('/dashboard/projects');
@@ -137,7 +137,7 @@ export const addUser = async (formData) => {
 
     await newUser.save();
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     throw new Error('Failed to create user!');
   }
 

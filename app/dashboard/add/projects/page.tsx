@@ -48,7 +48,7 @@ export default function add() {
           </select>
         </div>
         <button
-          className="rounded-xl bg-white text-primary-30 py-2 px-8 mt-8 font-semibold text-lg"
+          className="hover:scale-110 rounded-xl bg-white text-primary-30 py-2 px-8 mt-8 font-semibold text-lg"
           type="submit"
         >
           Submit

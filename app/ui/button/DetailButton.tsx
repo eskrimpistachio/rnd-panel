@@ -1,5 +1,3 @@
-import { MdOutlineAdd } from 'react-icons/md';
-
 export default function DetailButton({
   children,
 }: {

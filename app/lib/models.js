@@ -79,6 +79,24 @@ const projects = new mongoose.Schema(
   { timestamps: true }
 );
 
+export const dataCard = {
+  "general" : {
+    "proyek"  : "7",
+    "uang" : "Rp. 1,252,344",
+    "hari" : "18 Hari"
+  },
+  "dataManage" : {
+    "hasilPenelitian" : "50",
+    "bahanMentah" : "27",
+    "hasilOlahan" : "58"
+  },
+  "projects" : {
+    "totalProjects" : "187",
+    "sedangBerjalan" : "17",
+    "peneliti" : "50"
+  }
+}
+
 export const User = mongoose.models.User || mongoose.model('User', userSchema);
 export const General =
   mongoose.models.General || mongoose.model('General', generalSchema);

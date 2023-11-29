@@ -1,5 +1,5 @@
 import Card from '../ui/card/Card';
-import { MdOutlineSearch, MdOutlineHelp } from 'react-icons/md';
+import { MdOutlineSearch, MdOutlineHelp, MdAddTask, MdAttachMoney, MdAccessTime } from 'react-icons/md';
 import {
   Table,
   Thead,
@@ -13,9 +13,11 @@ import Button from '../ui/button/Button';
 import Link from 'next/link';
 import { fetchGeneral } from '../lib/data';
 import { delGeneralData } from '../lib/actions';
+import { dataCard } from '../lib/models';
 
 export default async function Dashboard() {
   const genData = await fetchGeneral();
+  const sumGenData = dataCard.general;
 
   return (
     <div className="m-4 flex flex-col gap-8">
@@ -40,9 +42,21 @@ export default async function Dashboard() {
         </Link>
       </div>
       <div className="flex flex-row justify-between">
-        <Card />
-        <Card />
-        <Card />
+        <Card
+          jumlah={sumGenData.proyek}
+          deskripsi="Proyek yang sedang di kerjakan"
+          icon={<MdAddTask />}
+        />
+        <Card
+          jumlah={sumGenData.uang}
+          deskripsi="Uang yang di keluarkan"
+          icon={<MdAttachMoney />}
+        />
+        <Card
+          jumlah={sumGenData.hari}
+          deskripsi="Waktu yang dihabiskan"
+          icon={<MdAccessTime />}
+        />
       </div>
       <h1 className="font-bold text-2xl">Recent Activity</h1>
       <TableContainer id="table">
@@ -64,7 +78,7 @@ export default async function Dashboard() {
                 <Td>
                   <form action={delGeneralData}>
                     <input type="hidden" name="id" value={d.id} />
-                    <button className="rounded-xl bg-secondary-20 text-white py-2 px-4 font-semibold ">
+                    <button className="hover:scale-110 rounded-xl bg-secondary-20 text-white py-2 px-4 font-semibold ">
                       Delete
                     </button>
                   </form>

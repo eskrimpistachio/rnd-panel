@@ -17,19 +17,19 @@ const data = [
     Terjual: 2400,
   },
   {
-    name: 'Avtur',
+    name: 'Minyak',
     Jumlah_Mining: 3000,
     Berhasil_Di_Olah: 2600,
     Terjual: 1500,
   },
   {
-    name: 'Bio Solar',
+    name: 'Emas',
     Jumlah_Mining: 6000,
     Berhasil_Di_Olah: 5600,
     Terjual: 4500,
   },
   {
-    name: 'Eco Diesel',
+    name: 'Copper',
     Jumlah_Mining: 4000,
     Berhasil_Di_Olah: 2400,
     Terjual: 2400,

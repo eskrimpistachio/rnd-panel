@@ -13,11 +13,12 @@ import {
 import Link from 'next/link';
 import { fetchDataManage } from '@/app/lib/data';
 import { delDataManage } from '@/app/lib/actions';
+import { dataCard } from '@/app/lib/models';
+import { MdContentPasteSearch, MdDiamond, MdOilBarrel } from 'react-icons/md';
 
 export default async function DataManagement() {
   const data = await fetchDataManage();
-
-  // console.log(data);
+  const sumDataManage = dataCard.dataManage;
 
   return (
     <div className="m-4 flex flex-col gap-8">
@@ -28,9 +29,21 @@ export default async function DataManagement() {
         </Link>
       </div>
       <div className="flex flex-row gap-4">
-        <Card />
-        <Card />
-        <Card />
+        <Card
+          jumlah={sumDataManage.hasilPenelitian}
+          deskripsi="Hasil Penelitian"
+          icon={<MdContentPasteSearch />}
+        />
+        <Card
+          jumlah={sumDataManage.bahanMentah}
+          deskripsi="Bahan Mentah"
+          icon={<MdDiamond />}
+        />
+        <Card
+          jumlah={sumDataManage.hasilOlahan}
+          deskripsi="Hasil Olahan"
+          icon={<MdOilBarrel />}
+        />
       </div>
       <Chart />
       <TableContainer>
@@ -54,7 +67,7 @@ export default async function DataManagement() {
                 <Td>
                   <form action={delDataManage}>
                     <input type="hidden" name="id" value={d.id} />
-                    <button className="rounded-xl bg-secondary-20 text-white py-2 px-4 font-semibold ">
+                    <button className="hover:scale-110 rounded-xl bg-secondary-20 text-white py-2 px-4 font-semibold ">
                       Delete
                     </button>
                   </form>
