@@ -45,7 +45,7 @@ export default async function Sidebar() {
     <div>
       <ul className="bg-primary-20 rounded-xl py-10 pl-6 pr-10 h-[90vh] flex flex-col gap-10">
         {menuItems.map((m) => (
-          <div className="flex flex-col gap-16">
+          <div key={m.title} className="flex flex-col gap-16">
             <li className="text-xl font-bold px-4" key={m.title}>
               <h1 className={unbound.className}>{m.title}</h1>
             </li>
