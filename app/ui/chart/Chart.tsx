@@ -34,7 +34,7 @@ const data = [
   },
 ];
 
-const Chart = () => {
+export const Chart = () => {
   return (
     <div className="bg-white rounded-xl py-4 px-4 flex flex-col gap-6">
       <h1 className="text-primary-30 font-bold text-xl">Reports</h1>
@@ -80,4 +80,3 @@ const Chart = () => {
   );
 };
 
-export default Chart;
