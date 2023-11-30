@@ -125,7 +125,7 @@ export const authenticate = async (prevState, formData) => {
 export const addUser = async (formData) => {
   const { username, password } = Object.fromEntries(formData);
 
-  try {
+  // try {
     connectDB();
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
@@ -136,11 +136,11 @@ export const addUser = async (formData) => {
     });
 
     await newUser.save();
-  } catch (err) {
-    // console.log(err);
-    throw new Error('Failed to create user!');
-  }
+  // } catch (err) {
+  //   // console.log(err);
+  //   throw new Error('Failed to create user!');
+  // }
 
-  revalidatePath('/');
-  redirect('/');
+  revalidatePath('/login');
+  redirect('/login');
 };
