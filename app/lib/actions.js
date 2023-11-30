@@ -1,6 +1,6 @@
 'use server';
 import { revalidatePath } from 'next/cache';
-import { connectDB } from './utils';
+import connectDB  from './utils';
 import { DataManagement, General, Projects, User } from './models';
 import { redirect } from 'next/navigation';
 import bcrypt from 'bcrypt';

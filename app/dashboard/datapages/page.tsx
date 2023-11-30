@@ -14,7 +14,7 @@ import { fetchDataManage } from '@/app/lib/data';
 import { delDataManage } from '@/app/lib/actions';
 import { dataCard } from '@/app/lib/models';
 import { MdContentPasteSearch, MdDiamond, MdOilBarrel } from 'react-icons/md';
-// import { Chart } from '@/app/ui/chart/chart';
+import { Chart } from '@/app/ui/chart/chart';
 
 export default async function DataManagement() {
   const data = await fetchDataManage();
@@ -45,7 +45,7 @@ export default async function DataManagement() {
           icon={<MdOilBarrel />}
         />
       </div>
-      {/* <Chart /> */}
+      <Chart />
       <TableContainer>
         <Table size="sm">
           <Thead>

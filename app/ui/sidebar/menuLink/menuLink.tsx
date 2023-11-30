@@ -13,7 +13,7 @@ export type items = {
   icon: React.ReactNode;
 };
 
-export default function menuLink({ items }: T) {
+const MenuLink = ({ items }: T) => {
   const pathname = usePathname();
 
   return (
@@ -29,4 +29,6 @@ export default function menuLink({ items }: T) {
       <h1>{items.title}</h1>
     </Link>
   );
-}
+};
+
+export default MenuLink;

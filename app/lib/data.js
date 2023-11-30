@@ -1,5 +1,5 @@
 import { DataManagement, General, Projects } from './models';
-import { connectDB } from './utils';
+import connectDB  from './utils';
 
 export const fetchGeneral = async () => {
   try {

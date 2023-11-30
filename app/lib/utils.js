@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-export const connectDB = async () => {
+const connectDB = async () => {
   const connection = {};
 
   try {
@@ -11,3 +11,5 @@ export const connectDB = async () => {
     throw new Error(error);
   }
 };
+
+export default connectDB ;
