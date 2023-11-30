@@ -123,7 +123,7 @@ export default function Home() {
             className="rounded-xl hidden md:flex"
           />
           <div className="bg-primary-20 rounded-xl py-8 px-8 flex flex-col gap-8">
-            <h1 className="font-bold text-xl">Login</h1>
+            <h1 className="font-bold text-xl">Add User</h1>
             <form
               action={addUser}
               className="flex flex-col gap-4 md:w-[25vw]"
@@ -149,8 +149,8 @@ export default function Home() {
                   className="border-2 border-white bg-primary-20 text-white rounded-lg"
                 />
               </div>
-              <button className="bg-white rounded-lg text-black font-bold text-lg py-2 w-36 mx-auto mt-8">
-                Login
+              <button className="hover:scale-110 bg-white rounded-lg text-black font-bold text-lg py-2 w-36 mx-auto mt-8">
+                Register
               </button>
             </form>
           </div>
